@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sala de operações · Banco Vivo IB</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.mjs"></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="brand"><span class="mark" aria-hidden="true">BV</span><span>Banco Vivo <strong>IB</strong></span></div>
+    <span class="local"><i></i> Simulação local</span>
+  </header>
+  <main>
+    <section class="page-heading">
+      <div><h1>Sala de operações</h1><p>Emissão, liquidação de títulos e caixa intradiário.</p></div>
+      <div class="clock"><span>Relógio da simulação</span><output id="clock">–</output><small id="day-name"></small></div>
+    </section>
+    <section class="toolbar" aria-label="Controle da simulação">
+      <div class="fields">
+        <label>Cenário<select id="scenario"></select></label>
+        <label>Política<select id="policy"><option value="predictive">Preditiva</option><option value="reactive">Reativa</option></select></label>
+        <button data-control id="reset">Iniciar novo dia</button>
+      </div>
+      <div class="fields">
+        <button data-control id="step">Avançar 15 min</button>
+        <button data-control id="finish" class="primary">Executar até o fim</button>
+      </div>
+    </section>
+    <p id="error" role="alert" hidden></p>
+    <section class="desks" aria-label="Mesas de operações">
+      <article class="desk" id="closing"></article>
+      <article class="desk" id="settlement"></article>
+      <article class="desk" id="treasury"></article>
+    </section>
+    <section class="details">
+      <article class="panel">
+        <div class="panel-heading"><h2>Decisões e eventos</h2><span id="event-count"></span></div>
+        <div id="opportunities"></div>
+        <details><summary>Razão da simulação</summary><div id="ledger"></div></details>
+        <ol id="timeline" class="timeline"></ol>
+      </article>
+      <article class="panel">
+        <div class="panel-heading benchmark-heading"><div><h2>Benchmark pareado</h2><p>Mesmo dia e mesmos recursos, com e sem antecipação.</p></div><button id="compare">Rodar benchmark</button></div>
+        <div id="results"></div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
