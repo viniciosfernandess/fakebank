@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "thresholds": { "step_up": 650, "hold": 850, "decline": 950 },
+  "rules": [
+    { "id": "CARD-CVV-FAIL", "feature": "cvv_failed", "operator": "gte", "value": 1, "points": 250, "reason": "CVV_MISMATCH" },
+    { "id": "CARD-SMALL-TEST", "feature": "small_amount", "operator": "gte", "value": 1, "points": 100, "reason": "SMALL_AUTHORIZATION" },
+    { "id": "CARD-FAILED-VELOCITY", "feature": "failed_cvv_10m", "operator": "gte", "value": 5, "points": 650, "reason": "CARD_TESTING_VELOCITY" },
+    { "id": "CARD-MERCHANT-SPREAD", "feature": "merchant_spread_10m", "operator": "gte", "value": 3, "points": 150, "reason": "MERCHANT_SPREAD" },
+    { "id": "CARD-HIGH-RISK-CUSTOMER", "feature": "customer_risk_tier", "operator": "gte", "value": 2, "points": 150, "reason": "HIGH_RISK_CUSTOMER" },
+    { "id": "CARD-NEW-CUSTOMER", "feature": "customer_tenure_days", "operator": "lt", "value": 7, "points": 100, "reason": "NEW_CUSTOMER" },
+    { "id": "CARD-INCOME-MISMATCH", "feature": "income_mismatch_pct", "operator": "gte", "value": 200, "points": 150, "reason": "DECLARED_INCOME_MISMATCH" },
+    { "id": "CARD-BIN-MERCHANT-TESTING", "feature": "bin_merchant_failed_cards_10m", "operator": "gte", "value": 5, "points": 700, "reason": "CARD_BIN_MERCHANT_TESTING" }
+  ]
+}

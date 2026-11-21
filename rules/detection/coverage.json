@@ -1,0 +1,601 @@
+{
+  "version": 1,
+  "scope": "Direct telemetry.emit object-literal producers and registered Bank.log audit kinds in apps, packages and scripts; parameter unions, single-span templates and literal guard lists are enumerated while open-ended expressions remain unresolved.",
+  "entries": [
+    {
+      "source": "agent",
+      "action": "agent.finished",
+      "status": "covered",
+      "rule": "S-GW-17",
+      "evidence": "tests/campaign-runtime.test.mjs: agent telemetry mirrors must match their EventStore source events"
+    },
+    {
+      "source": "agent",
+      "action": "agent.spawned",
+      "status": "covered",
+      "rule": "S-GW-17",
+      "evidence": "tests/campaign-runtime.test.mjs: agent telemetry mirrors must match their EventStore source events"
+    },
+    {
+      "source": "agent",
+      "action": "integrity.violation",
+      "status": "covered",
+      "rule": "S-GW-17",
+      "evidence": "tests/campaign-runtime.test.mjs: agent telemetry mirrors must match their EventStore source events"
+    },
+    {
+      "source": "agent",
+      "action": "tool.called",
+      "status": "covered",
+      "rule": "S-GW-17",
+      "evidence": "tests/campaign-runtime.test.mjs: agent telemetry mirrors must match their EventStore source events"
+    },
+    {
+      "source": "auth",
+      "action": "access_revoked_device",
+      "status": "covered",
+      "rule": "S-AUTH-08",
+      "evidence": "tests/revoked-device-detection.test.mjs: accepted revoked-device audit actions trigger critical identity alerts; denied attempts stay quiet"
+    },
+    {
+      "source": "auth",
+      "action": "contact_change",
+      "status": "covered",
+      "rule": "S-AUTH-13",
+      "evidence": "tests/detection-coverage.test.mjs: repeated contact changes alert on the third committed change"
+    },
+    {
+      "source": "auth",
+      "action": "device_key_bound",
+      "status": "covered",
+      "rule": "S-PIX-14",
+      "evidence": "tests/streaming-correlation.test.mjs: stream correlation alerts before the periodic scan and retries publication across restart"
+    },
+    {
+      "source": "auth",
+      "action": "heartbeat",
+      "status": "covered",
+      "rule": "S-AUTH-07",
+      "evidence": "tests/sentinels.test.mjs: auth and card producer heartbeats detect silence and recovery independently"
+    },
+    {
+      "source": "auth",
+      "action": "login_challenge",
+      "status": "covered",
+      "rule": "S-AUTH-09",
+      "evidence": "tests/detection-coverage.test.mjs: login challenge bursts alert on the sixth challenge while ordinary login stays quiet"
+    },
+    {
+      "source": "auth",
+      "action": "login_failed",
+      "status": "covered",
+      "rule": "S-AUTH-01",
+      "evidence": "tests/detection-coverage.test.mjs: login failures and refresh reuse have source-linked positive and negative detections"
+    },
+    {
+      "source": "auth",
+      "action": "password_changed",
+      "status": "covered",
+      "rule": "S-AUTH-10",
+      "evidence": "tests/detection-coverage.test.mjs: sensitive authentication action bursts have source-linked positive and negative detections"
+    },
+    {
+      "source": "auth",
+      "action": "pix_device_registered",
+      "status": "covered",
+      "rule": "S-AUTH-12",
+      "evidence": "tests/detection-coverage.test.mjs: sensitive authentication action bursts have source-linked positive and negative detections"
+    },
+    {
+      "source": "auth",
+      "action": "refresh_reuse_detected",
+      "status": "covered",
+      "rule": "S-AUTH-05",
+      "evidence": "tests/detection-coverage.test.mjs: login failures and refresh reuse have source-linked positive and negative detections"
+    },
+    {
+      "source": "auth",
+      "action": "refresh_revoked_device",
+      "status": "covered",
+      "rule": "S-AUTH-08",
+      "evidence": "tests/revoked-device-detection.test.mjs: accepted revoked-device audit actions trigger critical identity alerts; denied attempts stay quiet"
+    },
+    {
+      "source": "auth",
+      "action": "step_up",
+      "status": "covered",
+      "rule": "S-AUTH-11",
+      "evidence": "tests/detection-coverage.test.mjs: sensitive authentication action bursts have source-linked positive and negative detections"
+    },
+    {
+      "source": "cards",
+      "action": "authorize",
+      "status": "covered",
+      "rule": "S-CARD-09",
+      "evidence": "tests/card-network.test.mjs: repeated card network declines alert on the fifth same-merchant response"
+    },
+    {
+      "source": "cards",
+      "action": "card_authorize_attempt",
+      "status": "covered",
+      "rule": "S-CARD-01",
+      "evidence": "tests/detection-coverage.test.mjs: repeated card authorization attempts alert only after the eleventh attempt"
+    },
+    {
+      "source": "cards",
+      "action": "card_updated",
+      "status": "covered",
+      "rule": "S-CARD-08",
+      "evidence": "tests/detection-coverage.test.mjs: card setting changes alert on the fifth committed update"
+    },
+    {
+      "source": "cards",
+      "action": "heartbeat",
+      "status": "covered",
+      "rule": "S-CARD-07",
+      "evidence": "tests/sentinels.test.mjs: auth and card producer heartbeats detect silence and recovery independently"
+    },
+    {
+      "source": "cards",
+      "action": "three_ds_event",
+      "status": "covered",
+      "rule": "S-GW-19",
+      "evidence": "tests/canary-watchdog.test.mjs: card canary catches 3DS challenge issuance before network authorization"
+    },
+    {
+      "source": "dict",
+      "action": "claim_complete",
+      "status": "covered",
+      "rule": "S-PIX-29",
+      "evidence": "tests/dict.test.mjs: repeated Pix key claims alert on the third completed claim"
+    },
+    {
+      "source": "dict",
+      "action": "fraud_flag",
+      "status": "covered",
+      "rule": "S-PIX-19",
+      "evidence": "tests/detection-coverage.test.mjs: repeated Pix fraud marker changes alert on the fourth operator action"
+    },
+    {
+      "source": "dict",
+      "action": "heartbeat",
+      "status": "covered",
+      "rule": "S-PIX-12",
+      "evidence": "tests/producer-health.test.mjs: pix, spi, dict, and ledger source heartbeats detect silence and recovery"
+    },
+    {
+      "source": "dict",
+      "action": "key_deregister",
+      "status": "covered",
+      "rule": "S-PIX-18",
+      "evidence": "tests/detection-coverage.test.mjs: Pix key deregistration alerts on the third committed removal"
+    },
+    {
+      "source": "dict",
+      "action": "resolve_key",
+      "status": "covered",
+      "rule": "S-PIX-30",
+      "evidence": "tests/dict.test.mjs: distinct Pix recipient lookups alert after the tenth resolved key"
+    },
+    {
+      "source": "gateway",
+      "action": "contact_changed",
+      "status": "covered",
+      "rule": "S-AUTH-13",
+      "evidence": "tests/detection-coverage.test.mjs: repeated contact changes alert on the third committed change"
+    },
+    {
+      "source": "gateway",
+      "action": "heartbeat",
+      "status": "covered",
+      "rule": "S-GW-07",
+      "evidence": "tests/sentinels.test.mjs: gateway heartbeat alerts after real-time grace without requiring customer traffic"
+    },
+    {
+      "source": "gateway",
+      "action": "kyc_status_own",
+      "status": "covered",
+      "rule": "S-AUTH-14",
+      "evidence": "tests/sentinels.test.mjs: KYC status outage alerts with the denied request and clears after customer retry"
+    },
+    {
+      "source": "gateway",
+      "action": "kyc_submission_own",
+      "status": "covered",
+      "rule": "S-AUTH-15",
+      "evidence": "tests/fault-lab-server.test.mjs: KYC submission outage isolates the customer and preserves independent review"
+    },
+    {
+      "source": "auth",
+      "action": "kyc_review",
+      "status": "covered",
+      "rule": "S-AUTH-16",
+      "evidence": "tests/fault-lab-server.test.mjs: KYC review interruption preserves the exact pending request until a reviewer retries"
+    },
+    {
+      "source": "gateway",
+      "action": "loan_offer_own",
+      "status": "covered",
+      "rule": "S-LOAN-04",
+      "evidence": "tests/sentinels.test.mjs: loan offer outage alerts with the denied request and clears after customer retry"
+    },
+    {
+      "source": "gateway",
+      "action": "pix_automatic_mandates_own",
+      "status": "covered",
+      "rule": "S-PIX-42",
+      "evidence": "tests/sentinels.test.mjs: Pix Automatic mandate list outage alerts with the denied request and clears after customer retry"
+    },
+    {
+      "source": "gateway",
+      "action": "pix_key_fraud_flag",
+      "status": "covered",
+      "rule": "S-PIX-19",
+      "evidence": "tests/detection-coverage.test.mjs: repeated Pix fraud marker changes alert on the fourth operator action"
+    },
+    {
+      "source": "gateway",
+      "action": "request",
+      "status": "covered",
+      "rule": "S-GW-01",
+      "evidence": "tests/detection-coverage.test.mjs: gateway request volume alerts after the three hundredth request"
+    },
+    {
+      "source": "gateway",
+      "action": "statement_foreign",
+      "status": "covered",
+      "rule": "S-ACC-01",
+      "evidence": "tests/detection-coverage.test.mjs: successful foreign statement reads detect the third account without alerting on two"
+    },
+    {
+      "source": "gateway",
+      "action": "statement_own",
+      "status": "covered",
+      "rule": "S-GW-14",
+      "evidence": "tests/detection-coverage.test.mjs: own-statement volume alerts on the fortieth read within five minutes"
+    },
+    {
+      "source": "ledger",
+      "action": "approve",
+      "status": "covered",
+      "rule": "S-LED-07",
+      "evidence": "tests/detection-coverage.test.mjs: manual posting decision bursts detect approvals and rejections"
+    },
+    {
+      "source": "ledger",
+      "action": "closed_credit_payout",
+      "status": "covered",
+      "rule": "S-LED-09",
+      "evidence": "tests/closed-account-credits.test.mjs: repeated closed-account credit payouts alert on the third payment"
+    },
+    {
+      "source": "ledger",
+      "action": "heartbeat",
+      "status": "covered",
+      "rule": "S-LED-05",
+      "evidence": "tests/producer-health.test.mjs: pix, spi, dict, and ledger source heartbeats detect silence and recovery"
+    },
+    {
+      "source": "ledger",
+      "action": "post",
+      "status": "covered",
+      "rule": "S-LED-10",
+      "evidence": "tests/ledger-integrity.test.mjs: ledger posting telemetry must match a balanced durable transaction"
+    },
+    {
+      "source": "ledger",
+      "action": "reject",
+      "status": "covered",
+      "rule": "S-LED-07",
+      "evidence": "tests/detection-coverage.test.mjs: manual posting decision bursts detect approvals and rejections"
+    },
+    {
+      "source": "ledger",
+      "action": "requested",
+      "status": "covered",
+      "rule": "S-LED-06",
+      "evidence": "tests/detection-coverage.test.mjs: manual posting request burst detects the tenth request"
+    },
+    {
+      "source": "ledger",
+      "action": "status_change",
+      "status": "covered",
+      "rule": "S-LED-08",
+      "evidence": "tests/detection-coverage.test.mjs: repeated account status changes alert on the fourth transition"
+    },
+    {
+      "source": "network",
+      "action": "mti_0100",
+      "status": "covered",
+      "rule": "S-CARD-09",
+      "evidence": "tests/card-network.test.mjs: repeated card network declines alert on the fifth same-merchant response"
+    },
+    {
+      "source": "network",
+      "action": "mti_0110",
+      "status": "covered",
+      "rule": "S-CARD-09",
+      "evidence": "tests/card-network.test.mjs: repeated card network declines alert on the fifth same-merchant response"
+    },
+    {
+      "source": "network",
+      "action": "mti_0220",
+      "status": "covered",
+      "rule": "S-CARD-10",
+      "evidence": "tests/card-network.test.mjs: repeated card captures alert on the third same-merchant settlement"
+    },
+    {
+      "source": "network",
+      "action": "mti_0400",
+      "status": "covered",
+      "rule": "S-CARD-11",
+      "evidence": "tests/card-network.test.mjs: repeated card reversals alert on the third same-merchant reversal"
+    },
+    {
+      "source": "network",
+      "action": "mti_1440",
+      "status": "covered",
+      "rule": "S-CARD-12",
+      "evidence": "tests/card-network.test.mjs: distinct card disputes alert on the third case without counting its stages"
+    },
+    {
+      "source": "pix",
+      "action": "charge_cancelled",
+      "status": "covered",
+      "rule": "S-PIX-28",
+      "evidence": "tests/pix-automatic.test.mjs: Pix Automatic cancellations alert on the third committed cancellation"
+    },
+    {
+      "source": "pix",
+      "action": "charge_failed",
+      "status": "covered",
+      "rule": "S-PIX-26",
+      "evidence": "tests/pix-automatic.test.mjs: Pix Automatic retries and failures alert only after three affected charges"
+    },
+    {
+      "source": "pix",
+      "action": "charge_held",
+      "status": "covered",
+      "rule": "S-PIX-08",
+      "evidence": "tests/pix-automatic.test.mjs: held automatic charge creates a source-linked Pix risk review alert"
+    },
+    {
+      "source": "pix",
+      "action": "charge_post_due_retry",
+      "status": "covered",
+      "rule": "S-PIX-31",
+      "evidence": "tests/pix-automatic.test.mjs: merchant post-due retry instructions alert on the third charge"
+    },
+    {
+      "source": "pix",
+      "action": "charge_reauthorization_required",
+      "status": "covered",
+      "rule": "S-PIX-32",
+      "evidence": "tests/pix-automatic.test.mjs: automatic reauthorization alerts only after the third affected charge"
+    },
+    {
+      "source": "pix",
+      "action": "charge_reauthorized",
+      "status": "covered",
+      "rule": "S-PIX-33",
+      "evidence": "tests/pix-automatic.test.mjs: automatic reauthorization alerts only after the third affected charge"
+    },
+    {
+      "source": "pix",
+      "action": "charge_retry_scheduled",
+      "status": "covered",
+      "rule": "S-PIX-25",
+      "evidence": "tests/pix-automatic.test.mjs: Pix Automatic retries and failures alert only after three affected charges"
+    },
+    {
+      "source": "pix",
+      "action": "charge_settled",
+      "status": "covered",
+      "rule": "S-PIX-27",
+      "evidence": "tests/pix-automatic.test.mjs: Pix Automatic settlement volume alerts only after three payer-merchant charges"
+    },
+    {
+      "source": "pix",
+      "action": "charge_submitted",
+      "status": "covered",
+      "rule": "S-PIX-24",
+      "evidence": "tests/pix-automatic.test.mjs: repeated Pix Automatic charges alert on the third payer-merchant submission"
+    },
+    {
+      "source": "pix",
+      "action": "daily_limit_changed",
+      "status": "covered",
+      "rule": "S-PIX-14",
+      "evidence": "tests/streaming-correlation.test.mjs: stream correlation alerts before the periodic scan and retries publication across restart"
+    },
+    {
+      "source": "pix",
+      "action": "heartbeat",
+      "status": "covered",
+      "rule": "S-PIX-10",
+      "evidence": "tests/producer-health.test.mjs: pix, spi, dict, and ledger source heartbeats detect silence and recovery"
+    },
+    {
+      "source": "pix",
+      "action": "hold",
+      "status": "covered",
+      "rule": "S-PIX-07",
+      "evidence": "tests/psp-cautelar.test.mjs: PSP cautelar holds only the reviewed root funds and release restores availability"
+    },
+    {
+      "source": "pix",
+      "action": "mandate_granted",
+      "status": "covered",
+      "rule": "S-PIX-20",
+      "evidence": "tests/pix-automatic.test.mjs: repeated Pix Automatic mandates alert on the third grant"
+    },
+    {
+      "source": "pix",
+      "action": "mandate_revoked",
+      "status": "covered",
+      "rule": "S-PIX-22",
+      "evidence": "tests/pix-automatic.test.mjs: repeated Pix Automatic mandates alert on the third revocation"
+    },
+    {
+      "source": "pix",
+      "action": "med_resolve",
+      "status": "covered",
+      "rule": "S-PIX-35",
+      "evidence": "tests/med-seven-day-window.test.mjs: repeated MED resolutions alert on the third case for one source account"
+    },
+    {
+      "source": "pix",
+      "action": "mule_hold",
+      "status": "covered",
+      "rule": "S-PIX-36",
+      "evidence": "tests/detection-coverage.test.mjs: a blocked mule sweep raises a source-linked high-severity alert"
+    },
+    {
+      "source": "pix",
+      "action": "night_setting_requested",
+      "status": "covered",
+      "rule": "S-PIX-14",
+      "evidence": "tests/streaming-correlation.test.mjs: campaign stream poll publishes a sequence alert before the two-second sentinel scan"
+    },
+    {
+      "source": "pix",
+      "action": "offer_created",
+      "status": "covered",
+      "rule": "S-PIX-21",
+      "evidence": "tests/pix-automatic.test.mjs: repeated Pix Automatic merchant offers alert on the fifth creation"
+    },
+    {
+      "source": "pix",
+      "action": "offer_revoked",
+      "status": "covered",
+      "rule": "S-PIX-23",
+      "evidence": "tests/pix-automatic.test.mjs: repeated Pix Automatic merchant offers alert on the fifth revocation"
+    },
+    {
+      "source": "pix",
+      "action": "release",
+      "status": "covered",
+      "rule": "S-PIX-38",
+      "evidence": "tests/psp-cautelar.test.mjs: three committed cautelar releases for one PSP account raise a SOC alert"
+    },
+    {
+      "source": "pix",
+      "action": "return",
+      "status": "covered",
+      "rule": "S-PIX-34",
+      "evidence": "tests/closed-account-credits.test.mjs: repeated closed-account credit payouts alert on the third payment"
+    },
+    {
+      "source": "pix",
+      "action": "settle",
+      "status": "covered",
+      "rule": "S-PIX-14",
+      "evidence": "tests/streaming-correlation.test.mjs: stream correlation alerts before the periodic scan and retries publication across restart"
+    },
+    {
+      "source": "risk",
+      "action": "decision",
+      "status": "covered",
+      "rule": "S-GW-15",
+      "evidence": "tests/risk-engine.test.mjs: risk telemetry decision must match its durable inline decision"
+    },
+    {
+      "source": "risk",
+      "action": "heartbeat",
+      "status": "covered",
+      "rule": "S-GW-10",
+      "evidence": "tests/sentinels.test.mjs: risk producer heartbeat detects silence independently of gateway traffic"
+    },
+    {
+      "source": "risk",
+      "action": "payment_held",
+      "status": "covered",
+      "rule": "S-PIX-08",
+      "evidence": "tests/risk-holds.test.mjs: each pending Pix risk hold creates its own SOC review alert"
+    },
+    {
+      "source": "risk",
+      "action": "payment_reviewed",
+      "status": "covered",
+      "rule": "S-PIX-17",
+      "evidence": "tests/risk-holds.test.mjs: repeated Pix risk review decisions alert on the fifth decision"
+    },
+    {
+      "source": "risk",
+      "action": "psp_cautelar",
+      "status": "covered",
+      "rule": "S-PIX-07",
+      "evidence": "tests/psp-cautelar.test.mjs: five distinct recent senders trigger a receiving PSP cautelar review"
+    },
+    {
+      "source": "risk",
+      "action": "rule_match",
+      "status": "covered",
+      "rule": "S-GW-16",
+      "evidence": "tests/risk-holds.test.mjs: risk rule-match telemetry must belong to a matching held decision"
+    },
+    {
+      "source": "siem",
+      "action": "alert",
+      "status": "covered",
+      "rule": "S-GW-18",
+      "evidence": "tests/sentinels.test.mjs: SIEM alert telemetry requires a registered source alert without recursion"
+    },
+    {
+      "source": "siem",
+      "action": "review_acknowledged",
+      "status": "covered",
+      "rule": "S-PIX-37",
+      "evidence": "tests/risk-holds.test.mjs: five real Pix review acknowledgements by one reviewer raise a SOC alert"
+    },
+    {
+      "source": "spi",
+      "action": "pacs.002",
+      "status": "covered",
+      "rule": "S-PIX-16",
+      "evidence": "tests/spi-telemetry-detection.test.mjs: SPI telemetry must match its persisted pacs message and outcome"
+    },
+    {
+      "source": "spi",
+      "action": "heartbeat",
+      "status": "covered",
+      "rule": "S-PIX-11",
+      "evidence": "tests/producer-health.test.mjs: pix, spi, dict, and ledger source heartbeats detect silence and recovery"
+    },
+    {
+      "source": "spi",
+      "action": "pacs.008",
+      "status": "covered",
+      "rule": "S-PIX-16",
+      "evidence": "tests/spi-telemetry-detection.test.mjs: SPI telemetry must match its persisted pacs message and outcome"
+    }
+  ],
+  "dynamic": [],
+  "log_callsites_dynamic": [],
+  "finite": [
+    {
+      "file": "apps/orchestrator/src/campaign-runtime.ts",
+      "source_expression": "\"agent\"",
+      "action_expression": "event.type",
+      "actions": ["agent.finished", "agent.spawned", "integrity.violation", "tool.called"]
+    },
+    {
+      "file": "apps/world/src/bank.ts",
+      "source_expression": "\"ledger\"",
+      "action_expression": "decision",
+      "actions": ["approve", "reject"]
+    },
+    {
+      "file": "apps/world/src/bank.ts",
+      "source_expression": "\"pix\"",
+      "action_expression": "resolution",
+      "actions": ["release", "return"]
+    },
+    {
+      "file": "apps/world/src/ecosystem/card-network.ts",
+      "source_expression": "\"network\"",
+      "action_expression": "`mti_${mti}`",
+      "actions": ["mti_0100", "mti_0110", "mti_0220", "mti_0400", "mti_1440"]
+    }
+  ]
+}

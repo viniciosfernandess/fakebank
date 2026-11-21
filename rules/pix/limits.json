@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "max_transaction_cents": 2000000,
+  "max_setting_cents": 2000000,
+  "daily_by_tier_cents": [0, 100000, 500000, 1500000],
+  "night_limit_cents": 100000,
+  "night_start_hour": 20,
+  "new_device_transaction_cents": 20000,
+  "new_device_daily_cents": 100000
+}

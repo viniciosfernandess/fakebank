@@ -1,0 +1,27 @@
+export const AUDIT_SOURCE_BY_KIND = {
+  access_revoked_device: "auth",
+  card_authorize_attempt: "cards",
+  card_updated: "cards",
+  contact_changed: "gateway",
+  device_key_bound: "auth",
+  gateway_request: null,
+  kyc_status_own: "gateway",
+  kyc_submission_own: "gateway",
+  kyc_review: "auth",
+  login_challenge: "auth",
+  login_failed: "auth",
+  loan_offer_own: "gateway",
+  mule_hold: "pix",
+  password_changed: "auth",
+  pix_automatic_mandates_own: "gateway",
+  pix_device_registered: "auth",
+  pix_key_fraud_flag: "gateway",
+  rate_limited: null,
+  refresh_reuse_detected: "auth",
+  refresh_revoked_device: "auth",
+  statement_foreign: "gateway",
+  statement_own: "gateway",
+  step_up: "auth",
+} as const;
+
+export type BankAuditKind = keyof typeof AUDIT_SOURCE_BY_KIND;

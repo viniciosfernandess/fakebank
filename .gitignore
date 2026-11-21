@@ -3,3 +3,9 @@
 .env
 .env.*
 .DS_Store
+**/node_modules/
+**/dist/
+.pnpm-store/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm

@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "min_ms": 20,
+  "p50_ms": 80,
+  "p99_ms": 1500,
+  "max_ms": 1700,
+  "timeout_ms": 10000
+}

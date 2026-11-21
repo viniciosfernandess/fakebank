@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "thresholds": { "step_up": 650, "hold": 850, "decline": 1000 },
+  "rules": [
+    { "id": "PIX-FLAGGED-DESTINATION", "feature": "destination_flagged", "operator": "gte", "value": 1, "points": 1000, "reason": "DESTINATION_FRAUD_FLAG" },
+    { "id": "PIX-NEW-DEVICE", "feature": "device_age_minutes", "operator": "lt", "value": 1440, "points": 200, "reason": "NEW_DEVICE" },
+    { "id": "PIX-NEW-BENEFICIARY", "feature": "new_beneficiary", "operator": "gte", "value": 1, "points": 100, "reason": "NEW_BENEFICIARY" },
+    { "id": "PIX-NEW-BENEFICIARY-SPREAD", "feature": "new_beneficiaries_24h", "operator": "gte", "value": 4, "points": 75, "reason": "NEW_BENEFICIARY_SPREAD" },
+    { "id": "PIX-AMOUNT-BASELINE", "feature": "amount_vs_average_pct", "operator": "gte", "value": 400, "points": 150, "reason": "AMOUNT_ABOVE_BASELINE" },
+    { "id": "PIX-MINUTE-VELOCITY", "feature": "velocity_1m", "operator": "gte", "value": 5, "points": 150, "reason": "PIX_MINUTE_VELOCITY" },
+    { "id": "PIX-TEN-MINUTE-VELOCITY", "feature": "velocity_10m", "operator": "gte", "value": 12, "points": 180, "reason": "PIX_TEN_MINUTE_VELOCITY" },
+    { "id": "PIX-FAN-IN", "feature": "fan_in_10m", "operator": "gte", "value": 5, "points": 250, "reason": "DESTINATION_FAN_IN" },
+    { "id": "PIX-NIGHT", "feature": "atypical_hour", "operator": "gte", "value": 1, "points": 50, "reason": "ATYPICAL_HOUR" },
+    { "id": "PIX-HIGH-RISK-CUSTOMER", "feature": "customer_risk_tier", "operator": "gte", "value": 2, "points": 150, "reason": "HIGH_RISK_CUSTOMER" },
+    { "id": "PIX-NEW-CUSTOMER", "feature": "customer_tenure_days", "operator": "lt", "value": 7, "points": 100, "reason": "NEW_CUSTOMER" },
+    { "id": "PIX-INCOME-MISMATCH", "feature": "income_mismatch_pct", "operator": "gte", "value": 200, "points": 150, "reason": "DECLARED_INCOME_MISMATCH" },
+    { "id": "PIX-PHONE-REPLACEMENT", "feature": "recent_phone_replacement", "operator": "gte", "value": 1, "points": 200, "reason": "RECENT_PHONE_REPLACEMENT" },
+    { "id": "PIX-PASSWORD-CHANGE", "feature": "recent_password_change", "operator": "gte", "value": 1, "points": 200, "reason": "RECENT_PASSWORD_CHANGE" }
+  ]
+}
